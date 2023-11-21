@@ -11,4 +11,5 @@ class ResourceController {
     fun getResource(): Mono<String> {
         return Mono.just("Hello Simple Rate Limiter!")
     }
+
 }

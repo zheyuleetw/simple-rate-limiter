@@ -9,7 +9,6 @@ fun ServerWebExchange.getRemoteIp(): String? {
     val xForwardedForHeader = headers.getFirst("X-Forwarded-For")
 
     if (!xForwardedForHeader.isNullOrBlank()) {
-        // TODO check forwarded real remote IP
         val xForwardedForAddresses = xForwardedForHeader.split(",").map { it.trim() }
         return xForwardedForAddresses.last()
     }
