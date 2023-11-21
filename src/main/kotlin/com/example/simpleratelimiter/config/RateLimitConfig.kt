@@ -12,9 +12,9 @@ class RateLimitConfig {
     fun registerAlgo(rateLimitAlgoBucket: RateLimitAlgoBucket): RateLimitAlgoBucket {
         rateLimitAlgoBucket.registerAlgo(
             Simple(
-                unit = RateLimitTimeUnit.SECOND,
-                quota = -1,
-                size = 10
+                unit = RateLimitTimeUnit.MINUTE,
+                quota = 10,
+                size = 1
             )
         )
         return rateLimitAlgoBucket
