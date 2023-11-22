@@ -31,9 +31,6 @@ class RateLimiterTest {
     }
 
     protected fun getResourceAndVerifySuccess(ip: String) {
-        runBlocking{
-            delay(1000)
-        }
         getResource(ip)
             .expectStatus().isOk
             .expectBody(String::class.java).isEqualTo("Hello Simple Rate Limiter!")
